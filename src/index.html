@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../dist/output.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="flex justify-center items-center h-screen bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+      <p class="text-[16rem] text-transparent bg-clip-text bg-gradient-to-r from-teal-200 to-lime-200">
+        10:14 PM
+      </p>
+    </div>
+  </body>
+  <script>
+    const now = new Date();
+    const isPM = now.getHours() > 12;
+    const hour = isPM ? now.getHours() - 12 : now.getHours();
+    const minute = now.getMinutes();
+    document.querySelector('p').textContent = `${hour}:${minute} ${isPM ? 'PM' : 'AM'}`;
+  </script>
+</html>
