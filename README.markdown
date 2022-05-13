@@ -1,10 +1,7 @@
-This page is loaded when opening a new tab (C-t) in the browser.
+# hypercyclicity.github.io
 
-In Chrome, we're using New Tab Redirect:
-https://github.com/jimschubert/newtab-redirect
-
-To generate the CSS with Tailwind styles we're using:
+Build site into the `docs/` folder:
 
 ```bash
-npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch --minify
+npm run build
 ```

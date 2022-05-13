@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify && cp ./src/index.html ./dist/index.html && mkdir -p ./dist/fonts && cp ./fonts/* ./dist/fonts/"
+    "build": "npx tailwindcss -i ./src/input.css -o ./docs/output.css --minify && cp ./src/index.html ./docs/index.html && mkdir -p ./docs/fonts && cp ./fonts/* ./docs/fonts/"
   },
   "devDependencies": {
     "tailwindcss": "^3.0.24"
