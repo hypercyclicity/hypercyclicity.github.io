@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify && cp ./src/index.html ./dist/index.html && mkdir -p ./dist/fonts && cp ./fonts/* ./dist/fonts/"
+  },
   "devDependencies": {
     "tailwindcss": "^3.0.24"
   }
