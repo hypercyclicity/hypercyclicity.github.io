@@ -15,7 +15,7 @@
       const d = new Date();
       const p = d.getHours() > 12;
       const h = p ? d.getHours() - 12 : d.getHours();
-      const m = d.getMinutes();
+      const m = String(new Date().getMinutes()).padStart(2, '0');
       const t = `${h}:${m} ${p ? 'PM' : 'AM'}`;
       document.querySelector('p').textContent = t;
     })
