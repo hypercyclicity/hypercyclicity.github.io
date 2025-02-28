@@ -1,0 +1,58 @@
+<!-- From ChatGPT -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script>
+let messages = [
+  "Hey bees, what's the buzz?",
+  "Hello, bees! Hope you're having a sweet day!",
+  "Hi, bees! Keep up the great work!",
+  "Yo bees, stay golden!",
+  "Good morning, bees! Don't work too hard!",
+  "Howdy, bees! Pollinate responsibly!"
+];
+
+let positions = [];
+let velocities = [];
+let standoutIndex;
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  textSize(24);
+  textAlign(CENTER, CENTER);
+  
+  // Initialize positions and velocities
+  for (let i = 0; i < messages.length; i++) {
+    positions.push(createVector(random(width), random(height)));
+    velocities.push(createVector(random(-1, 1), random(-1, 1)));
+  }
+  
+  standoutIndex = floor(random(messages.length)); // Pick a standout message
+}
+
+function draw() {
+  background(240, 220, 180); // A honey-colored background
+  
+  for (let i = 0; i < messages.length; i++) {
+    let pos = positions[i];
+    let vel = velocities[i];
+    
+    // Move messages
+    pos.add(vel);
+    
+    // Bounce off edges
+    if (pos.x < 0 || pos.x > width) vel.x *= -1;
+    if (pos.y < 0 || pos.y > height) vel.y *= -1;
+    
+    // Draw messages
+    if (i === standoutIndex) {
+      fill(255, 150, 0);
+      textSize(32);
+      textStyle(BOLD);
+    } else {
+      fill(50);
+      textSize(24);
+      textStyle(NORMAL);
+    }
+    text(messages[i], pos.x, pos.y);
+  }
+}
+</script>
